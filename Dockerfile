@@ -15,6 +15,6 @@ USER 1000
 WORKDIR /app
 
 # ЗАПУСК:
-# 1. Мы запускаем маааленький сервер на Node.js, который просто держит порт 10000 открытым для Render.
-# 2. Параллельно запускаем самого бота.
+# 1. Микро-сервер для Render на 10000 порту.
+# 2. Бот на порту 18789 БЕЗ флага --host.
 CMD ["/bin/sh", "-c", "node -e 'require(\"http\").createServer((req,res)=>res.end(\"ok\")).listen(10000)' & openclaw gateway --port 18789 --allow-unconfigured"]
